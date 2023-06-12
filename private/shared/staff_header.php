@@ -15,6 +15,6 @@
   </header>
   <nav>
     <ul>
-      <li><a href="index.php">Menu</a></li>
+      <li><a href="/public/staff/">Menu</a></li>
     </ul>
   </nav>
