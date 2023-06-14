@@ -9,7 +9,12 @@ function error_404() {
 }
 
 function error_500() {
-    header($_SERVER["SERVER_PROTOCOL"] . " 501 Internal Server Error");
+    header($_SERVER["SERVER_PROTOCOL"] . " 500 Internal Server Error");
+    exit();
+}
+
+function redirect_to($location) {
+    header("Location: " . $location);
     exit();
 }
 ?>
