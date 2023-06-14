@@ -26,6 +26,7 @@ foreach ($pages as $page) {
 ?>
 
 <?php include(SHARED_PATH . '/staff_header.php') ?>
+<a href="<?php echo url_to('/pages') ?>">Back</a>
 
 <?php
 echo htmlspecialchars($id);
