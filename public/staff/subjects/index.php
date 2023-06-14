@@ -38,7 +38,7 @@ $subjects = [
         <h1>Subjects</h1>
 
         <div class="actions">
-            <a class="action" href="">Create New Subject</a>
+            <a class="action" href="<?php echo url_to('/subjects/new.php'); ?>">Create New Subject</a>
         </div>
 
         <table class="list">
