@@ -1,7 +1,26 @@
 <?php 
 require_once('../../../private/initialize.php');
 
-$id = $_GET['id'] ?? '';
+$id = $_GET['id'] ?? redirect_to(url_to('/subjects/index.php'));
+$menu_name = $_GET['menu_name'] ?? '';
+$position = $_GET['position'] ?? '';
+$visible = $_GET['visible'] ?? '';
+
+
+
+if (is_post_request()) {
+    $menu_name = $_POST['menu_name'] ?? '';
+    $position = $_POST['position'] ?? '';
+    $visible = $_POST['visible'] ?? '';
+
+
+    echo "Form parameters <br />";
+    echo "Menu name: " . $menu_name . "<br />";
+    echo "Position: " . $position . "<br />";
+    echo "Visible: " . $visible . "<br />";
+} else {
+    // redirect_to(url_to('/subjects/new.php'));
+}
 ?>
 
 
@@ -15,13 +34,13 @@ $id = $_GET['id'] ?? '';
   <div class="subject new">
     <h1>Edit Subject</h1>
 
-    <form action="" method="post">
+    <form action="<?php echo url_to('/subjects/edit.php?id='.urlencode($id)); ?>" method="post">
       <dl>
         <dt>Menu Name</dt>
-        <dd><input type="text" name="menu_name" value="" /></dd>
+        <dd><input type="text" name="menu_name" value="<?php echo $menu_name ?>" /></dd>
       </dl>
       <dl>
-        <dt><?php echo $id; ?></dt>
+        <dt>Position</dt>
         <dd>
           <select name="position">
             <option value="1">1</option>
