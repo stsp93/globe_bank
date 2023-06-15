@@ -13,7 +13,7 @@ $pages = [
 
 <?php
 
-$id = $_GET['id'] ?? '1';
+$id = htmlspecialchars($_GET['id'] ?? '1');
 ?>
 
 <?php

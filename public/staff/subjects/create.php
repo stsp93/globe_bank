@@ -3,9 +3,9 @@ require_once('../../../private/initialize.php');
 
 
 if (is_post_request()) {
-    $menu_name = $_POST['menu_name'] ?? '';
-    $position = $_POST['position'] ?? '';
-    $visible = $_POST['visible'] ?? '';
+    $menu_name = htmlspecialchars($_POST['menu_name'] ?? '');
+    $position = htmlspecialchars($_POST['position'] ?? '');
+    $visible = htmlspecialchars($_POST['visible'] ?? '');
 
 
     echo "Form parameters <br />";

@@ -1,17 +1,17 @@
 <?php 
 require_once('../../../private/initialize.php');
 
-$id = $_GET['id'] ?? redirect_to(url_to('/subjects/index.php'));
-$menu_name = $_GET['menu_name'] ?? '';
-$position = $_GET['position'] ?? '';
-$visible = $_GET['visible'] ?? '';
+$id = htmlspecialchars($_GET['id'] ?? redirect_to(url_to('/subjects/index.php')));
+$menu_name = htmlspecialchars($_GET['menu_name'] ?? '');
+$position = htmlspecialchars($_GET['position'] ?? '');
+$visible = htmlspecialchars($_GET['visible'] ?? '');
 
 
 
 if (is_post_request()) {
-    $menu_name = $_POST['menu_name'] ?? '';
-    $position = $_POST['position'] ?? '';
-    $visible = $_POST['visible'] ?? '';
+    $menu_name = htmlspecialchars($_POST['menu_name'] ?? '');
+    $position = htmlspecialchars($_POST['position'] ?? '');
+    $visible = htmlspecialchars($_POST['visible'] ?? '');
 
 
     echo "Form parameters <br />";
@@ -51,7 +51,7 @@ if (is_post_request()) {
         <dt>Visible</dt>
         <dd>
           <input type="hidden" name="visible" value="0" />
-          <input type="checkbox" name="visible" value="1" />
+          <input type="checkbox" name="visible" value="1" <?php if($visible) {echo 'checked';} ?> />
         </dd>
       </dl>
       <div id="operations">
