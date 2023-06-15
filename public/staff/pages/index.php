@@ -12,6 +12,9 @@ $pages = [
 <?php include(SHARED_PATH . '/staff_header.php') ?>
 
 <div id="content">
+<div class="actions">
+            <a class="action" href="<?php echo url_to('/pages/new.php'); ?>">Create New Page</a>
+        </div>
 
   <table class="list">
     <tr>
@@ -32,7 +35,7 @@ $pages = [
           <td><?php echo $page['visible']; ?></td>
           <td><?php echo $page['menu_name']; ?></td>
           <td><a class="action" href="<?php echo url_to('/pages/show.php?id=' . urlencode($page['id'])); ?>">View</a></td>
-          <td><a class="action" href="">Edit</a></td>
+          <td><a class="action" href="<?php echo url_to('/pages/edit.php?id=' . urlencode($page['id'])); ?>">Edit</a></td>
           <td><a class="action" href="">Delete</a></td>
 
         </tr>
