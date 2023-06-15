@@ -26,8 +26,7 @@ $subjects = [
         'visible' => '1',
         'menu_name' => 'Commercial'
     ]
-]
-
+    ];
     ?>
 
 <?php $page_title = 'Subjects'; ?>
@@ -58,7 +57,7 @@ $subjects = [
                     <td><?php echo $subject['visible'] == 1 ? 'true': 'false'; ?></td>
                     <td><?php echo $subject['menu_name']; ?></td>
                     <td><a class="action" href="<?php echo url_to('/subjects/show.php?id=' . urlencode($subject['id'])) ?>">View</a></td>
-                    <td><a class="action" href="">Edit</a></td>
+                    <td><a class="action" href="<?php echo url_to('/subjects/edit.php?id=' . urlencode($subject['id'])) ?>">Edit</a></td>
                     <td><a class="action" href="">Delete</a></td>
                 </tr>
 
